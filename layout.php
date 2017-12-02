@@ -8,8 +8,12 @@
 </head>
 <body>
     <header>
-        <div>My Filer</div>
+        <h1><a href="index.php">My Filer</a></h1>
     </header>
+    <nav class="account">
+        <a href="register.php">register</a>
+        <a href="login.php">login</a>
+    </nav>
     <main>
         <?php echo $content; ?>
     </main>
