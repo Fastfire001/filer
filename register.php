@@ -5,7 +5,10 @@ $firstname = '';
 $lastname = '';
 $username = '';
 $email = '';
+$password = '';
+$password_repeat;
 $errors = '';
+$isFormValid = false;
 
 if (!empty($_POST['firstname']) || !empty($_POST['lastname']) || !empty($_POST['username']) || !empty($_POST['email']) || !empty($_POST['password']) || !empty($_POST['password_repeat'])){
     $firstname = htmlentities($_POST['firstname']);
@@ -14,7 +17,6 @@ if (!empty($_POST['firstname']) || !empty($_POST['lastname']) || !empty($_POST['
     $email = htmlentities($_POST['email']);
     $password = $_POST['password'];
     $password_repeat = $_POST['password_repeat'];
-    $isFormValid = false;
 
     if (strlen($firstname) >= 2 && strlen($lastname) >= 2 && strlen($username) >=2 && filter_var($email, FILTER_VALIDATE_EMAIL)&& strlen($password) >= 6 && $password == $password_repeat){
         $isFormValid = true;
@@ -34,7 +36,13 @@ if (!empty($_POST['firstname']) || !empty($_POST['lastname']) || !empty($_POST['
 }
 
 if ($isFormValid === true){
+    $creation = date('Y-m-d H:i:s');
 
+    $q = "INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `creation`) VALUES (NULL, '".$firstname."', '".$lastname."', '".$username."', '".$email."', '".$password."', '".$creation."')";
+    mysqli_query($link, $q);
+
+    header('Location: index.php');
+    exit();
 }
 
 ob_start();

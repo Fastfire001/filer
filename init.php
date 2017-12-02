@@ -1,3 +1,3 @@
 <?php
-$link = mysqli_connect('localhost', 'root', '', 'babyblog');
+$link = mysqli_connect('localhost', 'root', '', 'filer');
 session_start();
