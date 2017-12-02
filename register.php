@@ -6,7 +6,7 @@ $lastname = '';
 $username = '';
 $email = '';
 $password = '';
-$password_repeat;
+$password_repeat= '';
 $errors = '';
 $isFormValid = false;
 
@@ -47,7 +47,7 @@ if ($isFormValid === true){
 
 ob_start();
 ?>
-    <p class="content">
+    <div class="content">
         <div class="errorBlock"><?= $errors ?></div>
         <form action="register.php" method="POST" class="registerForm">
             <label for="firstname">First name</label><br>
@@ -64,7 +64,7 @@ ob_start();
             <input type="password" name="password_repeat" id="password_repeat" maxlength="254" class="form-control"><br>
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
-    </p>
+    </div>
 <?php
 $content = ob_get_contents();
 ob_end_clean();

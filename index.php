@@ -2,7 +2,7 @@
 $title = 'Home';
 ob_start();
 ?>
-<p class="content"></p>
+<div class="content"></div>
 <?php
 $content = ob_get_contents();
 ob_end_clean();

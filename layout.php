@@ -13,10 +13,14 @@
     <nav class="account">
         <a href="register.php">register</a>
         <a href="login.php">login</a>
+        <a href="logout.php">Logout</a>
     </nav>
     <main>
         <?php echo $content; ?>
     </main>
+    <?php
+    echo $_SESSION['username'];
+    ?>
     <footer>
         Maxime Maréchal &#169;
     </footer>

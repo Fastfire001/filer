@@ -61,11 +61,24 @@ footer{
     justify-content: center;
 }
 
+div.errorBlock{
+    text-align: center;
+}
+
 form.registerForm{
     text-align: center;
     margin: 30px;
 }
 
 .registerForm > input{
+    margin-bottom: 20px;
+}
+
+form.loginForm{
+    text-align: center;
+    margin: 30px;
+}
+
+.loginForm > input{
     margin-bottom: 20px;
 }
