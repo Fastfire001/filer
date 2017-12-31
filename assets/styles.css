@@ -41,7 +41,7 @@ nav.account{
     margin: 15px;
     border: solid #067BC2;
     font-size: 100%;
-    width: 99vw;
+    width: 98vw;
     height: 4vh;
     display: flex;
     align-items: center;
@@ -81,4 +81,19 @@ form.loginForm{
 
 .loginForm > input{
     margin-bottom: 20px;
+}
+
+.needConnexion{
+    text-align: center;
+    font-size: 300%;
+}
+div.addfile{
+    width: 50vw;
+    border-color: black;
+    border: solid;
+    text-align: center;
+    line-height: 200%;
+    margin-left: 25vw;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
