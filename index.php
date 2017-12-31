@@ -6,7 +6,7 @@ ob_start();
 ?>
 <div class="content">
     <div class="addfile">
-        <form method="post" action="./addFile.php">
+        <form method="post" action="./addFile.php" enctype="multipart/form-data">
             <input type="file" name="file"><br>
             <label for="fileName">Choose the name of your file (don't forget the extension):</label><br>
             <input id="fileName" name="fileName" type="text"><br>
