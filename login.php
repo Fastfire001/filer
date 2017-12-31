@@ -22,7 +22,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
         exit();
     }
 
-} else{
+} else if (!empty($_POST['username']) || !empty($_POST['password'])){
     $errors = 'Invalid username or password';
 }
 ob_start();
