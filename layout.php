@@ -23,8 +23,5 @@
     <main>
         <?php echo $content; ?>
     </main>
-    <footer>
-        Maxime Maréchal &#169;
-    </footer>
 </body>
 </html>
