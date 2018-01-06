@@ -38,8 +38,9 @@ h1 > a{
 }
 
 nav.account{
-    margin: 15px;
+    margin: 1vw;
     border: solid #067BC2;
+    border-width: 3px;
     font-size: 100%;
     width: 98vw;
     height: 4vh;
@@ -89,11 +90,48 @@ form.loginForm{
 }
 div.addfile{
     width: 50vw;
-    border-color: black;
-    border: solid;
+    border: solid #067BC2;
+    border-width: 3px;
     text-align: center;
     line-height: 200%;
     margin-left: 25vw;
     margin-bottom: 10px;
     margin-top: 10px;
+}
+
+div.allfiles{
+    border: solid #067BC2;
+    border-width: 3px;
+    width: 98vw;
+    min-height: 200px;
+    margin-left: 1vw;
+}
+
+div.file{
+    margin: 0.5%;
+    height: 100%;
+    font-size: 85%;
+    display: inline;
+}
+
+div.line{
+    border: solid #067BC2;
+    border-width: 1.5px;
+}
+
+a.download{
+    margin: 2px;
+    float: left;
+}
+
+span.rename{
+    float: right;
+    margin: 2px;
+    margin-left: 20px;
+}
+
+a.delete{
+    float: right;
+    margin: 2px;
+    margin-left: 20px;
 }
