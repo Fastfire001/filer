@@ -16,8 +16,8 @@ if (true === $isFileValid){
 
         $uploaddir = './files/' . $userID . '/';
         $uploadfile = $uploaddir . basename($_FILES['file']['name']);
-        $tmp_file = $file['tmp_name'];
         move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile);
+        rename($uploadfile, $uploaddir . $fileName);
 
 
         $q = "INSERT INTO `files` (`file_id`, `user_id`, `name`, `path`) VALUES (NULL, ?, ?, ?)";
