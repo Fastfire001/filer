@@ -26,7 +26,7 @@ ob_start();
         <?php foreach ($files as $file): ?>
             <div data-fileID="<?= $file['file_id']; ?>" class="file">
                 <a class="download" download="<?= $file['name'] ?>" href="./files/<?= $userID ?>/<?= $file['name'] ?>"><?= $file['name'] ?></a>
-                <a class="delete" href="deleteFile.php?id=<?= $file['file_id'] ?>?name=<?= $file['name'] ?>">Delete</a>
+                <a class="delete" href="deleteFile.php?id=<?= $file['file_id'] ?>&name=<?= $file['name'] ?>">Delete</a>
                 <span class="rename">Rename</span>
             </div>
             <div class="line"></div>
