@@ -1,8 +1,16 @@
 <?php
 require ('init.php');
 $title = 'Home';
+if (isset($_SESSION['id'])){
+    $userID = $_SESSION['id'];
+    $result = mysqli_query($link, 'SELECT * FROM files WHERE user_id =' . $userID);
+    $files = [];
+    while ($row = mysqli_fetch_assoc($result))
+    {
+        $files[] = $row;
+    }
+}
 ob_start();
-
 ?>
 <div class="content">
     <div class="addfile">
@@ -13,6 +21,16 @@ ob_start();
             <input id="fileName" name="fileName" type="text"><br>
             <input type="submit" value="Send">
         </form>
+    </div>
+    <div class="allfiles">
+        <?php foreach ($files as $file): ?>
+            <div data-fileID="<?= $file['file_id']; ?>" class="file">
+                <a class="download" download="<?= $file['name'] ?>" href="./files/<?= $userID ?>/<?= $file['name'] ?>"><?= $file['name'] ?></a>
+                <a class="delete" href="deleteFile.php?id=<?= $file['file_id'] ?>?name=<?= $file['name'] ?>">Delete</a>
+                <span class="rename">Rename</span>
+            </div>
+            <div class="line"></div>
+        <?php endforeach; ?>
     </div>
 </div>
 <?php
