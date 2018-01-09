@@ -135,3 +135,39 @@ a.delete{
     margin: 2px;
     margin-left: 20px;
 }
+
+.hide{
+    visibility: hidden;
+}
+
+.popup{
+    border: solid #067BC2;
+    border-width: 3px;
+    text-align: center;
+    line-height: 2;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    height: 25vh;
+    width: 25vw;
+    margin-left: 37.5vw;
+    top: 37.5vh;
+    z-index: 6;
+
+}
+
+.overlay{
+    position: fixed;
+    background: rgba(0,0,0,0.6);
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.popup > form {
+
+}
