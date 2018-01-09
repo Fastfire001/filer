@@ -32,6 +32,14 @@ ob_start();
             <div class="line"></div>
         <?php endforeach; ?>
     </div>
+    <div class="overlay hide"></div>
+    <div class="popup hide">
+        <form action="renameFile.php" method="POST">
+            <label for="newName">New name:</label><br>
+            <input id="newName" type="text"><br>
+            <input type="submit" value="Send"><br>
+        </form>
+    </div>
 </div>
 <?php
 if (empty($_SESSION['id'])){
