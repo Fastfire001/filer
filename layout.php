@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet"> <!--font -->
     <link rel="stylesheet" href="./assets/styles.css" type="text/css" />
+    <script src="./assets/script.js"></script>
 </head>
 <body>
     <header>
