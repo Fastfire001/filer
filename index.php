@@ -34,9 +34,9 @@ ob_start();
     </div>
     <div class="overlay hide"></div>
     <div class="popup hide">
-        <form action="renameFile.php" method="POST">
+        <form action="renameFile.php" method="POST" class="renameForm">
             <label for="newName">New name:</label><br>
-            <input id="newName" type="text"><br>
+            <input id="newName" name="newName" type="text"><br>
             <input type="submit" value="Send"><br>
         </form>
     </div>
