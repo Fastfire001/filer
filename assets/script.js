@@ -6,6 +6,7 @@ window.onload = function () {
             document.querySelector('div.popup').classList.remove("hide");
             document.querySelector('div.overlay').classList.remove("hide");
             document.querySelector('input#newName').value = oldName;
+            document.querySelector('input[name="fileID"]').value = this.parentElement.getAttribute('data-fileid');
         };
     }
     document.querySelector('form.renameForm').onsubmit = function () {
