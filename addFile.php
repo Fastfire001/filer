@@ -12,8 +12,7 @@ if (true === $isFileValid){
     if (!file_exists('./files/' . $userID)) {
         mkdir('./files/' . $userID, 0777);
     }
-    if (!file_exists('./files/' . $userID . '/' . $fileName)){
-
+    if (!file_exists('./files/' . $userID . '/' . $fileName) && $file["size"] < 20000000){
         $uploaddir = './files/' . $userID . '/';
         $uploadfile = $uploaddir . basename($_FILES['file']['name']);
         move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile);
@@ -24,7 +23,6 @@ if (true === $isFileValid){
         mysqli_stmt_bind_param($stmt, 'iss', $userID, $fileName, $path);
         mysqli_stmt_execute($stmt);
     }
-
 }
 header('Location: index.php');
 exit();
