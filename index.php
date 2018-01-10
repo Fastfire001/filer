@@ -13,6 +13,9 @@ if (isset($_SESSION['id'])){
 ob_start();
 ?>
 <div class="content">
+    <div class="error">
+        <?= $_GET['error'] ?>
+    </div>
     <div class="addfile">
         <form method="post" action="./addFile.php" enctype="multipart/form-data">
             <input type="hidden" name="MAX_FILE_SIZE" value="20000000">
