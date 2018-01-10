@@ -14,7 +14,11 @@ ob_start();
 ?>
 <div class="content">
     <div class="error">
-        <?= $_GET['error'] ?>
+        <?php
+            if (!empty($_GET['error'])){
+                echo $_GET['error'];
+            }
+        ?>
     </div>
     <div class="addfile">
         <form method="post" action="./addFile.php" enctype="multipart/form-data">
