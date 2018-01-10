@@ -4,14 +4,18 @@ $fileName =  htmlentities($_POST['fileName']);
 $file = $_FILES['file'];
 $userID = $_SESSION['id'];
 $path = "./files/" . $userID . "/" . $fileName;
-$isFileValid = false;
+$isNameValid = false;
 if (!empty($fileName) && 0 !== strlen($fileName) && !empty($file)){
-    $isFileValid = true;
+    $isNameValid = true;
 } else {
-    header('Location: index.php?error=invalid name');
+    header('Location: index.php?error=Invalid name');
     exit();
 }
-if (true === $isFileValid){
+if (strlen($file['size']) === 1){
+    header('Location: index.php?error=Invalid file');
+    exit();
+}
+if (true === $isNameValid){
     if (!file_exists('./files/' . $userID)) {
         mkdir('./files/' . $userID, 0777);
     }
@@ -26,7 +30,7 @@ if (true === $isFileValid){
         mysqli_stmt_bind_param($stmt, 'iss', $userID, $fileName, $path);
         mysqli_stmt_execute($stmt);
     } else{
-        header('Location: index.php?error=failed file upload');
+        header('Location: index.php?error=Failed file upload');
         exit();
     }
 }
