@@ -1,6 +1,6 @@
 <?php
 require ('init.php');
-$fileName =  $_POST['fileName'];
+$fileName =  htmlentities($_POST['fileName']);
 $file = $_FILES['file'];
 $userID = $_SESSION['id'];
 $path = "./files/" . $userID . "/" . $fileName;
@@ -24,7 +24,6 @@ if (true === $isFileValid){
         mysqli_stmt_bind_param($stmt, 'iss', $userID, $fileName, $path);
         mysqli_stmt_execute($stmt);
     }
-    var_dump(basename($_FILES['file']['name']));
 
 }
 header('Location: index.php');
