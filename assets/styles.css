@@ -155,7 +155,6 @@ a.delete{
     margin-left: 37.5vw;
     top: 37.5vh;
     z-index: 6;
-
 }
 
 .overlay{
@@ -170,4 +169,9 @@ a.delete{
 
 .popup > form {
 
+}
+
+div.error{
+    color: red;
+    text-align: center;
 }
