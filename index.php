@@ -38,6 +38,7 @@ ob_start();
             <label for="newName">New name:</label><br>
             <input id="newName" name="newName" type="text"><br>
             <input type="hidden" name="fileID" value="">
+            <input type="hidden" name="oldFileName" value="">
             <input type="submit" value="Send"><br>
         </form>
     </div>
