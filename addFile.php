@@ -7,6 +7,9 @@ $path = "./files/" . $userID . "/" . $fileName;
 $isFileValid = false;
 if (!empty($fileName) && 0 !== strlen($fileName) && !empty($file)){
     $isFileValid = true;
+} else {
+    header('Location: index.php?error=invalid name');
+    exit();
 }
 if (true === $isFileValid){
     if (!file_exists('./files/' . $userID)) {
@@ -22,6 +25,9 @@ if (true === $isFileValid){
         $userID = intval($userID);
         mysqli_stmt_bind_param($stmt, 'iss', $userID, $fileName, $path);
         mysqli_stmt_execute($stmt);
+    } else{
+        header('Location: index.php?error=failed file upload');
+        exit();
     }
 }
 header('Location: index.php');
