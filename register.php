@@ -38,8 +38,6 @@ if (!empty($_POST['firstname']) || !empty($_POST['lastname']) || !empty($_POST['
 if ($isFormValid === true){
     $creation = date('Y-m-d H:i:s');
 
-    //$q = "INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `creation`) VALUES (NULL, '".$firstname."', '".$lastname."', '".$username."', '".$email."', '".$password."', '".$creation."')";
-    //mysqli_query($link, $q);
     $q = "INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `creation`) VALUES (NULL, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($link, $q);
     mysqli_stmt_bind_param($stmt, 'ssssss', $firstname, $lastname, $username, $email, $password , $creation);
@@ -51,7 +49,7 @@ if ($isFormValid === true){
 ob_start();
 ?>
     <div class="content">
-        <div class="errorBlock"><?= $errors ?></div>
+        <div class="error"><?= $errors ?></div>
         <form action="register.php" method="POST" class="registerForm">
             <label for="firstname">First name</label><br>
             <input type="text" name="firstname" id="firstname" maxlength="254" class="form-control" value="<?= $firstname ?>"><br>
