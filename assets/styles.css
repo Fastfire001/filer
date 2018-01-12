@@ -102,9 +102,10 @@ div.addfile{
 div.allfiles{
     border: solid #067BC2;
     border-width: 3px;
-    width: 98vw;
-    min-height: 200px;
-    margin-left: 1vw;
+    max-width: 72vw;
+    margin: auto;
+    overflow-y: scroll;
+    height: 50vh;
 }
 
 div.file{
@@ -122,6 +123,7 @@ div.line{
 a.download{
     margin: 2px;
     float: left;
+    margin-left: 10px;
 }
 
 span.rename{
@@ -134,6 +136,7 @@ a.delete{
     float: right;
     margin: 2px;
     margin-left: 20px;
+    margin-right: 10px;
 }
 
 .hide{
@@ -167,11 +170,26 @@ a.delete{
     left: 0;
 }
 
-.popup > form {
-
-}
 
 div.error{
     color: red;
     text-align: center;
+}
+
+
+.pointer{
+    cursor: pointer;
+}
+
+.pointer:hover{
+    color: #751a3f;
+}
+
+a.delete{
+    text-decoration: none;
+    color: #eb1205;
+}
+
+.worthnav{
+    color: #067BC2;
 }
