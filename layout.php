@@ -14,11 +14,11 @@
     <nav class="account">
         <?php
         if (!isset($_SESSION['username'])): ?>
-        <a href="register.php">register</a>
-        <a href="login.php">login</a>
+        <a href="register.php" class="pointer worthnav">register</a>
+        <a href="login.php" class="pointer worthnav">login</a>
         <?php else: ?>
-        <a href="index.php"><?= $_SESSION['username'] ?></a>
-        <a href="logout.php">Logout</a>
+        <a href="index.php" class="pointer worthnav"><?= $_SESSION['username'] ?></a>
+        <a href="logout.php" class="pointer worthnav">Logout</a>
         <?php endif; ?>
     </nav>
     <main>
