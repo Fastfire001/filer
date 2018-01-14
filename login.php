@@ -1,5 +1,9 @@
 <?php
 require('init.php');
+if (isset($_SESSION['id'])){
+    header('Location: index.php');
+    exit();
+}
 $title = 'Login';
 $username = '';
 $password = '';
